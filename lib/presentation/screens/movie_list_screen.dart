@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/service_locator.dart';
 import 'package:movie_app/presentation/cubit/movie_cubit.dart';
 import 'package:movie_app/presentation/cubit/movie_state.dart';
-import 'package:movie_app/domain/repository/movie_repository.dart';
-import 'package:movie_app/data/services/movie_service.dart';
 import 'package:movie_app/presentation/screens/movie_detail_screen.dart';
 
 class MovieListScreen extends StatelessWidget {
@@ -12,7 +11,7 @@ class MovieListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => MovieCubit(MovieRepository(MovieService()))..fetchMovies(),
+      create: (_) => s1<MovieCubit>()..fetchMovies(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Popular Movies'),

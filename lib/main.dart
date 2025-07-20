@@ -5,7 +5,11 @@ import 'package:movie_app/domain/repository/movie_repository.dart';
 import 'package:movie_app/presentation/cubit/movie_cubit.dart';
 import 'package:movie_app/presentation/screens/movie_list_screen.dart';
 
+import 'core/service_locator.dart';
+
 void main() {
+  setupLocator();
+
   runApp(const MyApp());
 }
 
